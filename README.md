@@ -422,7 +422,7 @@ QuicktransferApplication.java
 Application starts at:
 
 ```text
-http://localhost:8080
+http://localhost:8095
 ```
 
 Expected Startup Log:
