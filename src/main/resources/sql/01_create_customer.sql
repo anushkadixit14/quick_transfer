@@ -1,0 +1,20 @@
+CREATE TABLE CUSTOMER (
+
+    customer_id BIGSERIAL PRIMARY KEY,
+
+    first_name VARCHAR(50) NOT NULL,
+
+    last_name VARCHAR(50) NOT NULL,
+
+    phone_number VARCHAR(15) NOT NULL,
+
+    email VARCHAR(100),
+
+    date_of_birth DATE NOT NULL,
+
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    active_flag BOOLEAN NOT NULL DEFAULT TRUE
+);
