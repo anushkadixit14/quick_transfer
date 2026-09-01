@@ -55,4 +55,17 @@ public class MoneyTransfer {
 	@JoinColumn(name = "customer_id",
 	nullable = false)
 	private Customer customer;
+	
+	@Column(name = "store_id", nullable = false)
+	private String storeId;
+
+	@Column(name = "register_id", nullable = false)
+	private String registerId;
+
+	@Column(name = "operator_id", nullable = false)
+	private String operatorId;
+
+	@Column(name = "rquid", nullable = false)
+	private String rquid;
+	
 }

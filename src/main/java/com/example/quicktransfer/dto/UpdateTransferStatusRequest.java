@@ -12,4 +12,7 @@ public class UpdateTransferStatusRequest {
 
     @NotNull(message = "Status is required")
     private TransferStatus status;
+    
+    private String remarks;
+    
 }

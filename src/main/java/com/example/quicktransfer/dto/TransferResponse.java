@@ -26,4 +26,9 @@ public class TransferResponse {
 	private String currency;
 	private String status;
 	private LocalDateTime createdAt;
+	
+	private String storeId;
+	private String registerId;
+	private String operatorId;
+	private String rquid;
 }
