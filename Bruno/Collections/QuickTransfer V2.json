@@ -1,0 +1,1056 @@
+{
+  "info": {
+    "name": "QuickTransfer V2",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Transfer",
+      "item": [
+        {
+          "name": "Create Transfer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5532",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "72",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "71",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "{{baseurl}}/api/v1/transfers",
+              "protocol": "",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": 12,\n  \"receiverName\": \"Ella\",\n  \"destinationCountry\": \"USA\",\n  \"transferAmount\": 1500.00,\n  \"currency\": \"USD\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create Tansfer Without Rquid",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5532",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "72",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "71",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": 4,\n  \"receiverName\": \"Alex Johnson\",\n  \"destinationCountry\": \"AMERICA\",\n  \"transferAmount\": 1000.00,\n  \"currency\": \"DOL\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get Transfer By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/8",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "8"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get Transfer By Reference",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/reference/QT202608310012",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "reference",
+                "QT202608310012"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get All Transfers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search by Store",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?storeId=5532",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "5532"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search By Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?status=COMPLETED",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "COMPLETED"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search By Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?customerId=1",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "customerId",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search By Country",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?destinationCountry=CANADA",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "destinationCountry",
+                  "value": "CANADA"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search By Register",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?registerId=72",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "registerId",
+                  "value": "72"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search By Date Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?fromDate=2026-08-01&toDate=2026-08-30",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-08-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-08-30"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search Store + Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?storeId=5532&status=CREATED",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "5532"
+                },
+                {
+                  "key": "status",
+                  "value": "CREATED"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search Customer + Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?customerId=1&status=COMPLETED",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "customerId",
+                  "value": "1"
+                },
+                {
+                  "key": "status",
+                  "value": "COMPLETED"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search Store + Register + Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?storeId=5532&registerId=71&status=CREATED",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "5532"
+                },
+                {
+                  "key": "registerId",
+                  "value": "71"
+                },
+                {
+                  "key": "status",
+                  "value": "CREATED"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Search With All Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?storeId=5532&registerId=72&customerId=1&status=COMPLETED&destinationCountry=CANADA&fromDate=2026-08-01&toDate=2026-08-30",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "5532"
+                },
+                {
+                  "key": "registerId",
+                  "value": "72"
+                },
+                {
+                  "key": "customerId",
+                  "value": "1"
+                },
+                {
+                  "key": "status",
+                  "value": "COMPLETED"
+                },
+                {
+                  "key": "destinationCountry",
+                  "value": "CANADA"
+                },
+                {
+                  "key": "fromDate",
+                  "value": "2026-08-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-08-30"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Pagination Test - Page 0",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Pagination Test - Page 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?page=1&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Pagination Test - Max Size",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?page=0&size=50",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "50"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Empty Result Test",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers?storeId=999999",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "999999"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Create Transfer 2 ",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "{{storeId}}",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "{{registerId}}",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "{{operatorId}}",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Rquid",
+                "value": "{{rquid}}",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "{{baseurl}}/api/v1/transfers",
+              "protocol": "",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": {{customerId}},\n  \"receiverName\": \"Alex Johnson\",\n  \"destinationCountry\": \"CANADA\",\n  \"transferAmount\": 500.00,\n  \"currency\": \"CAD\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Status",
+      "item": [
+        {
+          "name": "CREATED → VALIDATED",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5532",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "72",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "71",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Rquid",
+                "value": "def-456",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/12/status",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "12",
+                "status"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"VALIDATED\",\n  \"remarks\": \"Customer validation completed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "VALIDATED → COMPLETED",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5932",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "70",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "82",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Rquid",
+                "value": "def-456",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/3/status",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "3",
+                "status"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"COMPLETED\",\n  \"remarks\": \"Transaction completed successfully\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Invalid Transition",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5532",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "72",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "71",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Rquid",
+                "value": "7cad84d1-7334-4a8d-91f1-5d469be5706a",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/8/status",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "8",
+                "status"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"COMPLETED\",\n  \"remarks\": \"Validation completed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "CREATED → FAILED ",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Store-Id",
+                "value": "5532",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Register-Id",
+                "value": "72",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Operator-Id",
+                "value": "71",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Rquid",
+                "value": "fail-123",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/11/status",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "11",
+                "status"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"FAILED\",\n  \"remarks\": \"Customer validation failed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "item": [
+        {
+          "name": "Get Transaction History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/transfers/12/history",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "transfers",
+                "12",
+                "history"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{baseurl}}/api/v1/customers",
+              "protocol": "",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Harsh\",\n  \"lastName\": \"Pandey\",\n  \"email\": \"harsh@test.com\",\n  \"phoneNumber\": \"9876728912\",\n  \"dateOfBirth\": \"2006-12-20\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8095/api/v1/customers/10",
+              "protocol": "http",
+              "host": [
+                "localhost:8095"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "10"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseurl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "storeId",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "registerId",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "operatorId",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "rquid",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "customerId",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
